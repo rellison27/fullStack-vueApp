@@ -1,8 +1,18 @@
 <template>
   <div class="home">
-    <h1>WElcome to Your Register Page!</h1>
-    <input type="email" name="email" placeholder="email" />
-    <input type="password" name="password" placeholder="password" />
+    <h1>Welcome to Your Register Page</h1>
+    <input
+      type="email"
+      name="email"
+      v-model="email"
+      placeholder="email" 
+    />
+    <input
+      type="password"
+      name="password"
+      v-model="password"
+      placeholder="password"
+    />
     <br />
     <button>Register</button>
   </div>
@@ -13,7 +23,15 @@
 
 export default {
   data() {
-    return {};
+    return {
+      email: "abc",
+      password: "123"
+    };
+  },
+  watch: {
+    email(value) {
+      console.log("email has changed", value)
+    }
   }
 };
 </script>
